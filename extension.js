@@ -683,14 +683,14 @@ class Extension {
 	constructor() {
 		extension = this;
 		// Register callbacks to be notified about changes
-		let monitorManager = Meta.MonitorManager.get();
-		this._monitorsChanged = monitorManager.connect('monitors-changed', () => this.set_panel_position());
+		// let monitorManager = Meta.MonitorManager.get();
+		//this._monitorsChanged = monitorManager.connect('monitors-changed', () => this.set_panel_position());
 		this._panelHeightChanged = PanelBox.connect("notify::height", () => this.set_panel_position());
 	}
 
 	destroy() {
-        let monitorManager = Meta.MonitorManager.get();
-        monitorManager.disconnect(this._monitorsChanged);
+        // let monitorManager = Meta.MonitorManager.get();
+        // monitorManager.disconnect(this._monitorsChanged);
         PanelBox.disconnect(this._panelHeightChanged)
     }
 	
